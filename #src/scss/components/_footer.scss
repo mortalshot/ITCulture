@@ -1,0 +1,181 @@
+.footer {
+	padding: 77px 0;
+	background-color: $GrayDark;
+	color: $White;
+
+	@media screen and (max-width: 991px) {
+		padding: 40px 0;
+	}
+
+	a {
+		color: $White;
+	}
+
+	&__row {
+		margin: 0 -15px;
+		justify-content: space-between;
+		align-items: center;
+
+		@media screen and (max-width: 767px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__column {
+		padding: 0 15px;
+	}
+
+	&__left {
+		flex: 0 0 16%;
+
+		@media screen and (max-width: 767px) {
+			order: 1;
+			flex: 0 0 45%;
+		}
+		@media screen and (max-width: 450px) {
+			flex: 0 0 100%;
+			justify-content: center;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__center {
+		flex: 0 0 53.6%;
+
+		@media screen and (max-width: 767px) {
+			flex: 0 0 100%;
+			order: 0;
+			margin-bottom: 15px;
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 0 0 23.3%;
+
+		@media screen and (max-width: 767px) {
+			order: 1;
+		}
+		@media screen and (max-width: 450px) {
+			flex: 0 0 100%;
+			justify-content: center;
+		}
+	}
+
+	&__logo {
+		margin-bottom: 9px;
+
+		@media screen and (max-width: 450px) {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	&__tagline {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+		margin-bottom: 18px;
+
+		@media screen and (max-width: $layoutDesktop + "px") {
+			font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(16 / 14);
+		}
+		@media screen and (max-width: 450px) {
+			text-align: center;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__phone {
+		font-weight: 900;
+		font-size: 16px;
+		line-height: 20px;
+		white-space: nowrap;
+		display: inline-block;
+
+		@media screen and (max-width: $layoutDesktop + "px") {
+			font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(20 / 16);
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -7.5px;
+	}
+
+	&__item {
+		flex: 0 0 50%;
+		padding: 0 7.5px;
+
+		& > a {
+			font-weight: 900;
+			font-size: 16px;
+			line-height: 20px;
+			text-decoration: underline;
+			margin-bottom: 12px;
+			display: block;
+
+			@media screen and (max-width: 767px) {
+				margin-bottom: 20px;
+			}
+		}
+
+		&.menu-item-has-children {
+			.sub-menu {
+				a {
+					position: relative;
+					padding-left: 19px;
+					margin-bottom: 9px;
+					display: block;
+					max-width: 220px;
+
+					@media screen and (max-width: 767px) {
+						max-width: 330px;
+						margin-bottom: 15px;
+					}
+
+					&::before {
+						content: "";
+						display: block;
+						width: 9px;
+						height: 9px;
+						border-radius: 50%;
+						position: absolute;
+						left: 0;
+						top: 2px;
+						border: 2px solid $White;
+					}
+				}
+			}
+		}
+	}
+
+	&__button {
+		width: 100%;
+		margin-bottom: 12px;
+
+		@media screen and (max-width: 450px) {
+			display: flex;
+			justify-content: center;
+		}
+
+		a {
+			max-width: 248px;
+			height: 67px;
+
+			@media screen and (min-width: 768px) and (max-width: 800px) {
+				letter-spacing: 0;
+			}
+		}
+	}
+
+	.calculator-link {
+		text-decoration: underline;
+	}
+}

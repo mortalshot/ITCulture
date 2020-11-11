@@ -1,0 +1,241 @@
+.services {
+	display: flex;
+	overflow: hidden;
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 276px;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background: url(../img/main/services/1.svg) no-repeat center/cover;
+		z-index: 1;
+
+		@media screen and (max-width: 1760px) {
+			transform: translate(-20%, 0);
+		}
+		@media screen and (max-width: 1600px) {
+			transform: translate(-50%, 0);
+		}
+		@media screen and (max-width: 1250px) {
+			transform: translate(-60%, 20%);
+		}
+		@media screen and (max-width: 992px) {
+			transform: translate(-60%, 35%);
+		}
+		@media screen and (max-width: 450px) {
+			display: none;
+		}
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		width: 236px;
+		height: 100%;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		background: url(../img/main/services/2.svg) no-repeat center/cover;
+		z-index: 1;
+
+		@media screen and (max-width: 1650px) {
+			transform: translate(55%, 0);
+		}
+		@media screen and (max-width: 1250px) {
+			transform: translate(60%, 20%);
+		}
+		@media screen and (max-width: 450px) {
+			display: none;
+		}
+	}
+
+	&__container {
+		@media screen and (max-width: 1400px) {
+			max-width: 1050px;
+		}
+	}
+
+	&__row {
+		@media screen and (max-width: 450px) {
+			flex-direction: column;
+		}
+	}
+
+	&__left {
+		background-color: $Cyan;
+		color: $White;
+		display: flex;
+		align-items: center;
+		flex: 0 0 32.5%;
+		position: relative;
+		padding-right: 20px;
+
+		@media screen and (max-width: 1600px) {
+			flex: 0 0 45%;
+		}
+		@media screen and (max-width: 1400px) {
+			flex: 0 0 50%;
+		}
+		@media screen and (max-width: 450px) {
+			padding: 20px;
+			margin: 0 -20px;
+		}
+
+		&::before {
+			@media screen and (min-width: 451px) {
+				content: "";
+				display: block;
+				width: 300%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translate(-100%, -50%);
+				background-color: $Cyan;
+			}
+		}
+	}
+
+	&__left-content {
+	}
+
+	&__title-h4 {
+		@media screen and (min-width: 451px) {
+			position: absolute;
+			top: 30px;
+			z-index: 1;
+		}
+	}
+
+	&__left-body {
+		padding: 20px 0;
+		position: relative;
+		z-index: 1;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+
+		@media screen and (max-width: 450px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__text {
+		margin-bottom: 35px;
+
+		@media screen and (max-width: 450px) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__btn {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 17px;
+		color: $White;
+		display: flex;
+		align-items: center;
+
+		span {
+			margin-right: 23px;
+		}
+	}
+
+	&__right {
+		padding: 123px 0px 123px 89px;
+		flex: 1 1 auto;
+		z-index: 2;
+
+		@media screen and (max-width: 1400px) {
+			padding-left: 50px;
+		}
+		@media screen and (max-width: 991px) {
+			padding: 50px 0px 50px 20px;
+		}
+		@media screen and (max-width: 450px) {
+			padding: 42px 0 42px 0;
+			margin: 0 -20px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		padding: 23px 0;
+		border-bottom: 1px solid $Gray;
+		&:first-child {
+			border-top: 1px solid $Gray;
+		}
+
+		@media screen and (max-width: 575px) {
+			padding: 15px 0;
+		}
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				.services__item-title {
+					color: $Cyan;
+				}
+
+				.services__link {
+					letter-spacing: 3px;
+					color: $Black;
+				}
+			}
+		}
+	}
+
+	&__item-icon {
+		flex: 0 0 32px;
+		padding-right: 48px;
+
+		@media screen and (max-width: 1400px) {
+			padding-right: 20px;
+		}
+		@media screen and (max-width: 450px) {
+			padding-left: 20px;
+		}
+	}
+
+	&__item-content {
+		@media screen and (max-width: 450px) {
+			padding-right: 20px;
+		}
+	}
+
+	&__item-title {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 24px;
+		color: $Black;
+		margin-bottom: 7px;
+		transition: 0.3s ease all 0s;
+
+		@media screen and (max-width: $layoutDesktop + "px") {
+			font-size: calc(14px + 6 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(24 / 20);
+		}
+	}
+
+	&__link {
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 16px;
+		color: $Gray2;
+		transition: 0.3s ease all 0s;
+
+		@media screen and (max-width: $layoutDesktop + "px") {
+			font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(16 / 14);
+		}
+
+		span {
+			padding-right: 10px;
+		}
+	}
+}

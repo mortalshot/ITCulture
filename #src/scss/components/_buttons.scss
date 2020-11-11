@@ -1,3 +1,24 @@
 .btn {
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 10px;
+    white-space: nowrap;
+
+    &-orange {
+        background-color: $Orange2;
+        color: $White;
+    }
+
+    &-white {
+        background-color: $White;
+        color: $Black;
+    }
 }

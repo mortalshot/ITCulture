@@ -1,8 +1,11 @@
 // === Sizes ===
-$size-container: 1170px;
-$size-layout-desktop: 1920;
-$size-header-height: 89px;
-$size-header-height-mobile: 52px;
+$size-container: 1230px;
+$layoutDesktop: 1920;
+$layoutMobile: 320;
+
+$size-header-top-height: 71px;
+$size-header-bottom-height: 49px;
+$size-header-mobile: 63px;
 
 // === Font ===
 $fontSize: 14px;
@@ -13,3 +16,11 @@ $fontSecond: "Roboto", $font;
 $lineHeight: 140%;
 
 // === Color ===
+$White: #fff;
+$Black: #000;
+$Cyan: #74bcbc;
+$Orange: #fc5e06;
+$Orange2: #f68351;
+$Gray: #e4e4e4;
+$GrayDark: #464646;
+$Gray2: #636363;

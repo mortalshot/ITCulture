@@ -6,6 +6,11 @@ body {
     color: $fontColor;
     overflow-x: hidden;
 
+    @media screen and (max-width: $layoutDesktop + 'px') {
+        font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+        line-height: calc(19 / 14);
+    }
+
     &.lock {
         overflow: hidden;
     }
@@ -19,10 +24,8 @@ body {
     }
 
     &__main {
-        padding: $size-header-height 0px 0px 0px;
-
-        @media screen and (max-width: 767px) {
-            padding: $size-header-height-mobile 0px 0px 0px;
+        @media screen and (max-width: 880px) {
+            padding-top: $size-header-mobile;
         }
     }
 
@@ -32,9 +35,10 @@ body {
 }
 
 .container {
+    width: 100%;
     max-width: $size-container;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 
     @media screen and (min-width: 992px) {
         padding: 0 30px;
@@ -49,4 +53,8 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+p {
+    margin: 0px 0px 16px 0px;
 }
