@@ -10,6 +10,9 @@
 // === fonts ===
 @import "fonts";
 
+// === Libs ===
+@import "libs/index";
+
 // === Base ===
 @import "base/index";
 
@@ -18,3 +21,227 @@
 
 // === Pages ===
 @import "pages/index";
+
+.calculator {
+	padding: 39px 0 94px;
+	background-color: $GrayLight;
+	&__container {
+	}
+
+	&__title-h4 {
+		margin-bottom: 57px;
+
+		@media screen and (max-width: 767px) {
+			margin-bottom: 30px;
+		}
+		@media screen and (max-width: 575px) {
+			margin-bottom: 25px;
+		}
+
+		&::before {
+			background-color: $Black;
+		}
+	}
+
+	&__row {
+		align-items: center;
+
+		@media screen and (max-width: 991px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__left {
+		flex: 1 1 auto;
+
+		@media screen and (max-width: 991px) {
+			flex: 0 0 100%;
+		}
+	}
+
+	&__title {
+		margin-bottom: 52px;
+
+		@media screen and (max-width: 767px) {
+			margin-bottom: 30px;
+		}
+		@media screen and (max-width: 575px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__num-slider {
+	}
+
+	&__right {
+		flex: 0 0 50%;
+		display: flex;
+		padding-left: 44px;
+
+		@media screen and (max-width: 1200px) {
+			padding-left: 20px;
+		}
+		@media screen and (max-width: 991px) {
+			flex: auto;
+			padding: 0;
+		}
+		@media screen and (max-width: 500px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__card {
+		flex: 0 0 49%;
+		display: flex;
+		background: #ffffff;
+		border-radius: 5px;
+		padding: 37px 40px;
+		margin-right: 11px;
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@media screen and (max-width: 1400px) {
+			padding: 30px 35px;
+		}
+		@media screen and (max-width: 1200px) {
+			padding: 20px 25px;
+		}
+		@media screen and (max-width: 1100px) {
+			padding: 20px 15px;
+		}
+		@media screen and (max-width: 991px) {
+			padding: 37px 40px;
+			justify-content: center;
+		}
+		@media screen and (max-width: 767px) {
+			padding: 30px 20px;
+		}
+		@media screen and (max-width: 575px) {
+			padding: 20px 15px;
+		}
+		@media screen and (max-width: 500px) {
+			flex: 0 0 100%;
+			margin: 0 0 13px;
+			padding: 37px 30px;
+		}
+	}
+
+	&__card-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+.num-slider {
+	margin-bottom: 27px;
+	@media screen and (min-width: 993px) {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	@media screen and (max-width: 575px) {
+		position: relative;
+		margin-bottom: 50px;
+	}
+
+	&__heading {
+		margin-bottom: 9px;
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 575px) {
+			margin-bottom: 30px;
+		}
+
+		i {
+			margin-right: 9px;
+		}
+
+		span {
+			font-family: $fontSecond;
+			font-weight: 900;
+			font-size: 16px;
+			line-height: 19px;
+			color: $Black;
+		}
+	}
+
+	&__slider {
+		.noUi-connects + .noUi-origin {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	&__row {
+		align-items: center;
+	}
+
+	&__input {
+		border-radius: 5px;
+		width: 65px;
+		height: 31px;
+		text-align: center;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 19px;
+		color: $Gray3;
+		margin-left: 35px;
+
+		@media screen and (max-width: 1200px) {
+			margin-left: 15px;
+		}
+		@media screen and (max-width: 575px) {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+}
+
+.calculator-sum {
+	text-align: center;
+	&__text {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 17px;
+		margin-bottom: 5px;
+	}
+
+	&__result {
+		font-weight: 700;
+		font-size: 28px;
+		line-height: 34px;
+		margin-bottom: 19px;
+
+		@media screen and (max-width: $layoutDesktop + "px") {
+			font-size: calc(18px + 10 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(35 / 28);
+		}
+	}
+
+	&__btn {
+		height: 55px;
+		max-width: 200px;
+		margin: 0 auto;
+	}
+}
+.calculator-offer {
+	&__item {
+		margin-bottom: 15px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 19px;
+		margin-bottom: 3px;
+	}
+
+	&__text {
+	}
+}

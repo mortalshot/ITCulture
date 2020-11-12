@@ -1,0 +1,222 @@
+.noUi-target {
+    background: #c4c4c4;
+    height: 3px;
+    position: relative;
+    border-radius: 100px;
+    width: 100%;
+    max-width: 433px;
+    margin: 0 11px 0 41px;
+
+    @media screen and (max-width: 1200px) {
+        margin-left: 30px;
+    }
+    @media screen and (max-width: 991px) {
+        max-width: 100%;
+        margin: 0 30px 0 20px;
+    }
+    @media screen and (max-width: 767px) {
+        margin: 0 50px 0 12px;
+    }
+    @media screen and (max-width: 575px) {
+        margin: 0 21px 0 15px;
+    }
+    @media screen and (max-width: 450px) {
+        margin: 0 30px;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        height: 3px;
+        position: absolute;
+        top: 0;
+
+        @media screen and (max-width: 450px) {
+            display: none;
+        }
+    }
+
+    &::before {
+        background-color: #74bcbc;
+        width: 38px;
+        left: -37px;
+        border-radius: 3px 0 0 3px;
+
+        @media screen and (max-width: 1200px) {
+            width: 30px;
+            left: -29px;
+        }
+        @media screen and (max-width: 991px) {
+            width: 20px;
+            left: -18px;
+        }
+        @media screen and (max-width: 767px) {
+            left: -9px;
+        }
+    }
+
+    &::after {
+        background: #c4c4c4;
+        width: 11px;
+        right: -10px;
+        border-radius: 0 3px 3px 0;
+
+        @media screen and (max-width: 767px) {
+            width: 50px;
+            right: -31px;
+        }
+        @media screen and (max-width: 575px) {
+            right: -21px;
+        }
+    }
+}
+
+.noUi-target,
+.noUi-target * {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    touch-action: none;
+    user-select: none;
+}
+
+.noUi-base,
+.noUi-connects {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.noUi-connects {
+    border-radius: 3px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.noUi-origin {
+    height: 10%;
+    width: 10%;
+}
+
+.noUi-connect,
+.noUi-origin {
+    will-change: transform;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    transform-origin: 0 0;
+    transform-style: flat;
+}
+
+.noUi-connect {
+    background-color: #74bcbc;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transform-origin: 0 0;
+    transform-style: flat;
+}
+
+.noUi-horizontal .noUi-origin {
+    height: 0;
+}
+
+.noUi-handle {
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    backface-visibility: hidden;
+    width: 48px;
+    height: 15px;
+    right: -6px;
+    top: -6px;
+    position: relative;
+
+    @media screen and (max-width: 991px) {
+        right: -50px;
+    }
+    @media screen and (max-width: 850px) {
+        right: -42px;
+    }
+    @media screen and (max-width: 700px) {
+        right: -35px;
+    }
+    @media screen and (max-width: 650px) {
+        right: -30px;
+    }
+    @media screen and (max-width: 575px) {
+        right: -23px;
+    }
+    @media screen and (max-width: 450px) {
+        width: 30px;
+        height: 23px;
+        top: -11px;
+        right: -15px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        height: 6px;
+        width: 5px;
+        background: url(../img/icons/uiHandle.svg) no-repeat center/cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.noUi-touch-area {
+    height: 100%;
+    width: 100%;
+}
+
+.noUi-value {
+    position: absolute;
+    white-space: nowrap;
+    text-align: center;
+    transform: translate(-50%, 50%);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #c4c4c4;
+
+    @media screen and (max-width: 767px) {
+        transform: translate(100%, 50%);
+    }
+    @media screen and (max-width: 575px) {
+        transform: translate(50%, 50%);
+    }
+    @media screen and (max-width: 450px) {
+        transform: translate(-50%, 50%);
+    }
+}
+
+.noUi-value:nth-child(2) {
+    transform: translate(-35px, 50%);
+
+    @media screen and (max-width: 1200px) {
+        transform: translate(-25px, 50%);
+    }
+
+    @media screen and (max-width: 991px) {
+        transform: translate(-18px, 50%);
+    }
+    @media screen and (max-width: 767px) {
+        transform: translate(-50%, 50%);
+    }
+}
+
+.noUi-value-sub {
+    display: none;
+}
+
+.noUi-pips {
+    @media screen and (max-width: 575px) {
+        padding: 5px 0;
+    }
+}
