@@ -1,0 +1,40 @@
+.itculture {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 919px;
+		background: url(../img/main/itculture-bg.svg) no-repeat center/cover;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		width: 430px;
+		height: 983px;
+		background: url(../img/main/feature-bg.svg) no-repeat center/cover;
+		position: absolute;
+		top: 0;
+		right: -1px;
+		transform: translate(0, -107px);
+
+		@media screen and (max-width: 1450px) {
+			transform: translate(150px, -107px);
+		}
+		@media screen and (max-width: 991px) {
+			transform: translate(200px, -107px);
+		}
+		@media screen and (max-width: 575px) {
+			transform: translate(230px, -107px);
+		}
+		@media screen and (max-width: 450px) {
+			display: none;
+		}
+	}
+}

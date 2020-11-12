@@ -1,0 +1,77 @@
+.steps {
+	position: relative;
+	z-index: 2;
+
+	&__wrapper {
+		padding: 69px 0 64px;
+		background-color: $White;
+		max-width: 1468px;
+		margin: 0 auto;
+
+		@media screen and (max-width: 991px) {
+			padding: 26px 0;
+		}
+		@media screen and (max-width: 767px) {
+			padding: 35px 0;
+		}
+	}
+
+	&__container {
+		max-width: 1257px;
+	}
+
+	&__row {
+		flex-wrap: wrap;
+
+		@media screen and (max-width: 450px) {
+			margin: 0 -7px;
+		}
+	}
+
+	&__item {
+		padding: 24px 15px;
+		flex: 0 0 33.333%;
+
+		@media screen and (max-width: 767px) {
+			padding: 15px;
+		}
+		@media screen and (max-width: 575px) {
+			flex: 0 0 50%;
+		}
+		@media screen and (max-width: 450px) {
+			padding: 15px 7px;
+		}
+	}
+
+	&__item-wrapper {
+		max-width: 300px;
+	}
+
+	&__title-h2 {
+		padding-top: 10px;
+	}
+
+	&__title {
+		font-weight: 900;
+		margin-bottom: 18px;
+		display: flex;
+		align-items: center;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 8px;
+			height: 2px;
+			background-color: $Cyan;
+			margin-right: 6px;
+		}
+	}
+
+	&__text {
+		line-height: 20px;
+
+		@media screen and (max-width: $layoutDesktop + "px") {
+			line-height: calc(20 / 14);
+		}
+	}
+}

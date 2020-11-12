@@ -1,0 +1,153 @@
+.reviews {
+	position: relative;
+	z-index: 2;
+	padding: 46px 0;
+	@media screen and (max-width: 575px) {
+		padding: 31px 0;
+	}
+
+	&__container {
+	}
+
+	&__title-h4 {
+		margin-bottom: 33px;
+
+		@media screen and (max-width: 767px) {
+			margin-bottom: 20px;
+		}
+
+		&::before {
+			content: "";
+			background-color: $Black;
+		}
+	}
+
+	&__title {
+		@media screen and (max-width: 575px) {
+			margin-bottom: 28px;
+		}
+	}
+
+	&__slider {
+		.slick-list {
+			margin-bottom: 0;
+			padding: 42px 0px;
+			display: flex;
+
+			@media screen and (max-width: 991px) {
+				display: flex;
+			}
+			@media screen and (max-width: 767px) {
+				padding: 30px 0;
+			}
+			@media screen and (max-width: 575px) {
+				display: block;
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				width: 200px;
+				height: 100%;
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: linear-gradient(270deg, #f4f4f4 0%, rgba(244, 244, 244, 0.63) 100%);
+
+				@media screen and (max-width: 1200px) {
+					width: 150px;
+				}
+				@media screen and (max-width: 991px) {
+					display: none;
+				}
+			}
+		}
+
+		.slick-track {
+			display: flex;
+			@media screen and (max-width: 575px) {
+				align-items: center;
+			}
+		}
+
+		.slick-arrow {
+			font-size: 0;
+			line-height: 1;
+			background: #f68351;
+			box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.05);
+			border-radius: 5px;
+			display: block;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 50%;
+			z-index: 1;
+
+			@media screen and (max-width: 575px) {
+				width: 28px;
+				height: 28px;
+			}
+		}
+
+		.slick-prev {
+			left: 0;
+			transform: translate(-93px, -50%);
+
+			@media screen and (max-width: 1400px) {
+				transform: translate(-20px, -50%);
+			}
+			@media screen and (max-width: 991px) {
+				transform: translate(0, -50%);
+			}
+
+			i {
+				transform: rotate(-180deg);
+			}
+		}
+		.slick-next {
+			right: 0;
+			transform: translate(93px, -50%);
+
+			@media screen and (max-width: 1400px) {
+				transform: translate(20px, -50%);
+			}
+			@media screen and (max-width: 991px) {
+				transform: translate(0, -50%);
+			}
+		}
+
+		.slick-dots {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: -27px;
+
+			@media screen and (max-width: 767px) {
+				margin-top: -15px;
+			}
+
+			li {
+				margin-right: 15px;
+				&:last-child {
+					margin-right: 0;
+				}
+
+				button {
+					font-size: 0;
+					line-height: 1;
+					display: block;
+					width: 8px;
+					height: 8px;
+					background-color: $Gray3;
+					border-radius: 50%;
+				}
+
+				&.slick-active {
+					button {
+						background-color: $Blue;
+					}
+				}
+			}
+		}
+	}
+}

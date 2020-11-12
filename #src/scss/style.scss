@@ -25,6 +25,14 @@
 .calculator {
 	padding: 39px 0 94px;
 	background-color: $GrayLight;
+
+	@media screen and (max-width: 991px) {
+		padding-bottom: 46px;
+	}
+	@media screen and (max-width: 500px) {
+		padding-bottom: 33px;
+	}
+
 	&__container {
 	}
 
@@ -245,3 +253,5 @@
 	&__text {
 	}
 }
+
+// !Calculator end

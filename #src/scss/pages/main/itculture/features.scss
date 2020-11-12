@@ -1,0 +1,103 @@
+.features {
+	display: flex;
+
+	@media screen and (max-width: 450px) {
+		flex-direction: column;
+	}
+
+	&__image {
+		flex: 1 1 auto;
+		@media screen and (min-width: 451px) {
+			position: relative;
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__content {
+		flex: 0 0 41%;
+		padding: 50px 0;
+		background-color: $Cyan;
+		color: $White;
+		display: flex;
+		align-items: center;
+
+		@media screen and (min-width: 451px) {
+			min-height: 506px;
+		}
+		@media screen and (max-width: 575px) {
+			flex: 0 0 50%;
+		}
+		@media screen and (max-width: 450px) {
+			padding: 31px 0 58px;
+		}
+	}
+
+	&__container {
+		max-width: 350px;
+		margin: 0 0 0 45px;
+
+		@media screen and (max-width: 991px) {
+			margin-left: 20px;
+		}
+		@media screen and (max-width: 767px) {
+			margin-left: 15px;
+		}
+	}
+
+	&__body {
+	}
+
+	&__title-h4 {
+		@media screen and (min-width: 451px) {
+			position: absolute;
+			top: 30px;
+		}
+		@media screen and (max-width: 450px) {
+			margin-bottom: 23px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 35px;
+
+		@media screen and (max-width: 450px) {
+			margin-bottom: 29px;
+		}
+	}
+
+	&__list {
+	}
+
+	&__item {
+		line-height: 16px;
+		position: relative;
+		padding-left: 26px;
+		margin-bottom: 7px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@media screen and (max-width: $layoutDesktop + "px") {
+			line-height: calc(16 / 14);
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			border: 2px solid $White;
+			position: absolute;
+			left: 0;
+			top: 4px;
+		}
+	}
+}
