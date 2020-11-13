@@ -3714,6 +3714,10 @@ textarea.form__input {
     max-width: 250px;
   }
 
+  .company__row {
+    display: block;
+  }
+
   .company__title {
     margin-bottom: 20px;
     max-width: 100%;

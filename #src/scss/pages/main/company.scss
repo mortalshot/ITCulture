@@ -23,6 +23,10 @@
 
 	&__row {
 		align-items: center;
+
+		@media screen and (max-width: 450px) {
+			display: block;
+		}
 	}
 
 	&__title {
