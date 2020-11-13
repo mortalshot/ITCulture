@@ -29,6 +29,10 @@
 	}
 
 	&__slider {
+		@media screen and (max-width: 575px) {
+			margin: 0 -20px;
+		}
+
 		.slick-list {
 			margin-bottom: 0;
 			padding: 42px 0px;
@@ -47,16 +51,14 @@
 			&::after {
 				content: "";
 				display: block;
-				width: 200px;
-				height: 100%;
+				width: calc(33% - 4px);
+				height: calc(100% - 84px);
 				position: absolute;
 				right: 0;
-				top: 0;
+				top: 50%;
+				transform: translate(0, -50%);
 				background: linear-gradient(270deg, #f4f4f4 0%, rgba(244, 244, 244, 0.63) 100%);
 
-				@media screen and (max-width: 1200px) {
-					width: 150px;
-				}
 				@media screen and (max-width: 991px) {
 					display: none;
 				}
@@ -99,6 +101,9 @@
 			@media screen and (max-width: 991px) {
 				transform: translate(0, -50%);
 			}
+			@media screen and (max-width: 575px) {
+				left: 20px;
+			}
 
 			i {
 				transform: rotate(-180deg);
@@ -113,6 +118,9 @@
 			}
 			@media screen and (max-width: 991px) {
 				transform: translate(0, -50%);
+			}
+			@media screen and (max-width: 575px) {
+				right: 20px;
 			}
 		}
 

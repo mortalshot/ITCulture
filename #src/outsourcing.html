@@ -1,0 +1,41 @@
+@@include('html-components/_header.html', {
+"title": "Page name"
+})
+
+<main class="site__main">
+	<section class="firstscreen">
+		<div class="firstscreen__row row">
+			<div class="firstscreen__content">
+				<div class="firstscreen__container container">
+					<div class="firstscreen__body">
+						<h1 class="firstscreen__title title-h1">IT-аутсорсинг</h1>
+						<div class="firstscreen__text">
+							<p>IT-аутсорсинг — это сравнительно молодая ветвь бизнес-услуг. Деятельность нашей компании
+								распространяется в основном на автономное обслуживание компьютеров клиента.</p>
+							<p>Вы можете заключить клиентский договор с нашей компанией и получить тем самым постоянное
+								профессиональное обслуживание и настройку Ваших компьютеров и всей IT-инфраструктуры.
+							</p>
+						</div>
+						<div class="firstscreen__button"><a href="" class="btn btn-orange">Оставить заявку</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="firstscreen__gallery gallery">
+				<div class="gallery__row">
+					<div class="gallery__vert">
+						<div class="gallery__img"><img src="img/gallery/outsourcing/outsourcing-1.jpg" alt=""></div>
+					</div>
+					<div class="gallery__wrapper">
+						<div class="gallery__img"><img src="img/gallery/outsourcing/outsourcing-2.jpg" alt=""></div>
+						<div class="gallery__img"><img src="img/gallery/outsourcing/outsourcing-3.jpg" alt=""></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	@@include('html-components/calculator.html')
+	
+</main>
+
+@@include('html-components/_footer.html')
