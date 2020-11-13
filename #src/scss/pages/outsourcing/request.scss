@@ -1,0 +1,81 @@
+.request {
+	background-color: $Cyan;
+	color: $White;
+	padding: 43px 0;
+
+	&__container {
+	}
+
+	&__form {
+	}
+
+	&__row {
+		align-items: center;
+
+		@media screen and (max-width: 767px) {
+			display: block;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 22px;
+		margin-right: 35px;
+		max-width: 304px;
+		flex: 0 0 30%;
+
+		@media screen and (max-width: $layoutDesktop + "px") {
+			font-size: calc(14px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(22 / 18);
+		}
+		@media screen and (max-width: 1200px) {
+			flex: 0 0 20%;
+		}
+		@media screen and (max-width: 991px) {
+			margin-right: 15px;
+		}
+		@media screen and (max-width: 767px) {
+			margin: 0px 0px 20px 0px;
+			max-width: 100%;
+		}
+	}
+
+	&__input-wrapper {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 575px) {
+			flex-direction: column;
+		}
+	}
+
+	.form__item {
+		width: 100%;
+		max-width: 280px;
+		margin: 0px 12px 0px 0px;
+
+		@media screen and (max-width: 575px) {
+			max-width: 100%;
+			margin: 0px 0px 15px 0px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		input {
+			height: 67px;
+		}
+	}
+
+	.form__button {
+		max-width: 248px;
+		height: 67px;
+
+		@media screen and (max-width: 575px) {
+			max-width: 100%;
+		}
+	}
+}
