@@ -1,0 +1,93 @@
+.more-about {
+	padding: 89px 0 120px;
+
+	@media screen and (max-width: 991px) {
+		padding: 50px 0;
+	}
+	@media screen and (max-width: 767px) {
+		padding: 40px 0;
+	}
+	@media screen and (max-width: 575px) {
+		padding: 25px 0;
+	}
+	
+	&__cards {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+
+		@media screen and (max-width: 767px) {
+			margin: 0 -7px;
+		}
+	}
+
+	&__card {
+		flex: 0 0 50%;
+		padding: 0 15px;
+		display: flex;
+		position: relative;
+		overflow: hidden;
+
+		@media screen and (max-width: 767px) {
+			padding: 0 7px;
+		}
+		@media screen and (max-width: 575px) {
+			flex: 0 0 100%;
+			padding: 15px 7px;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			width: 18px;
+			height: 384px;
+			background: url(../img/more-about/more-about-bg.svg) no-repeat center/cover;
+			position: absolute;
+			left: 33px;
+			top: 50%;
+			transform: translate(0, -50%);
+
+			@media screen and (max-width: 767px) {
+				left: 15px;
+			}
+		}
+	}
+
+	&__card-wrapper {
+		width: 100%;
+		background-color: $Cyan;
+		padding: 60px 20px 60px 100px;
+		color: $White;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (max-width: 991px) {
+			padding-left: 60px;
+		}
+		@media screen and (max-width: 767px) {
+			padding: 40px 20px 40px 40px;
+		}
+		@media screen and (max-width: 575px) {
+			padding-left: 60px;
+		}
+		@media screen and (max-width: 450px) {
+			padding-left: 40px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 50px;
+		max-width: 380px;
+		flex: 1 1 auto;
+
+		@media screen and (max-width: 767px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__button {
+		max-width: 200px;
+		height: 55px;
+	}
+}

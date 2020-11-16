@@ -2277,6 +2277,73 @@ textarea.form__input {
   border-bottom-color: transparent;
 }
 
+.more-about {
+  padding: 89px 0 120px;
+}
+
+.more-about__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.more-about__card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.more-about__card::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 384px;
+  background: url(../img/more-about/more-about-bg.svg) no-repeat center/cover;
+  position: absolute;
+  left: 33px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.more-about__card-wrapper {
+  width: 100%;
+  background-color: #74bcbc;
+  padding: 60px 20px 60px 100px;
+  color: #fff;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.more-about__title {
+  margin-bottom: 50px;
+  max-width: 380px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.more-about__button {
+  max-width: 200px;
+  height: 55px;
+}
+
 .calculator {
   padding: 39px 0 94px;
   background-color: #f5f5f5;
@@ -3214,6 +3281,14 @@ textarea.form__input {
     padding: 50px 0px 50px 20px;
   }
 
+  .more-about {
+    padding: 50px 0;
+  }
+
+  .more-about__card-wrapper {
+    padding-left: 60px;
+  }
+
   .calculator {
     padding-bottom: 46px;
   }
@@ -3731,6 +3806,30 @@ textarea.form__input {
     padding-bottom: 0;
   }
 
+  .more-about {
+    padding: 40px 0;
+  }
+
+  .more-about__cards {
+    margin: 0 -7px;
+  }
+
+  .more-about__card {
+    padding: 0 7px;
+  }
+
+  .more-about__card::before {
+    left: 15px;
+  }
+
+  .more-about__card-wrapper {
+    padding: 40px 20px 40px 40px;
+  }
+
+  .more-about__title {
+    margin-bottom: 20px;
+  }
+
   .calculator__title-h4 {
     margin-bottom: 30px;
   }
@@ -3916,6 +4015,21 @@ textarea.form__input {
 
   .offer__right {
     padding: 30px 20px;
+  }
+
+  .more-about {
+    padding: 25px 0;
+  }
+
+  .more-about__card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    padding: 15px 7px;
+  }
+
+  .more-about__card-wrapper {
+    padding-left: 60px;
   }
 
   .calculator__title-h4 {
@@ -4228,6 +4342,10 @@ textarea.form__input {
   .offer__right {
     padding: 20px 0 20px 0;
     margin: 0 -20px;
+  }
+
+  .more-about__card-wrapper {
+    padding-left: 40px;
   }
 }
 
