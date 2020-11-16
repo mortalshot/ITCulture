@@ -72,27 +72,7 @@
 			}
 		}
 
-		.slick-arrow {
-			font-size: 0;
-			line-height: 1;
-			background: #f68351;
-			box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.05);
-			border-radius: 5px;
-			display: block;
-			width: 40px;
-			height: 40px;
-			position: absolute;
-			top: 50%;
-			z-index: 1;
-
-			@media screen and (max-width: 575px) {
-				width: 28px;
-				height: 28px;
-			}
-		}
-
 		.slick-prev {
-			left: 0;
 			transform: translate(-93px, -50%);
 
 			@media screen and (max-width: 1400px) {
@@ -104,13 +84,9 @@
 			@media screen and (max-width: 575px) {
 				left: 20px;
 			}
-
-			i {
-				transform: rotate(-180deg);
-			}
 		}
+
 		.slick-next {
-			right: 0;
 			transform: translate(93px, -50%);
 
 			@media screen and (max-width: 1400px) {
@@ -125,9 +101,6 @@
 		}
 
 		.slick-dots {
-			display: flex;
-			align-items: center;
-			justify-content: center;
 			margin-top: -27px;
 
 			@media screen and (max-width: 767px) {
@@ -141,9 +114,6 @@
 				}
 
 				button {
-					font-size: 0;
-					line-height: 1;
-					display: block;
 					width: 8px;
 					height: 8px;
 					background-color: $Gray3;

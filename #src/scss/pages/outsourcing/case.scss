@@ -1,0 +1,95 @@
+.case {
+	border-radius: 5px;
+
+	&__row {
+		@media screen and (max-width: 767px) {
+			display: block;
+		}
+	}
+
+	&__image {
+		flex: 0 0 36.6%;
+		position: relative;
+
+		@media screen and (max-width: 991px) {
+			flex: 0 0 40%;
+		}
+		@media screen and (max-width: 767px) {
+			padding-bottom: 50%;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 5px;
+		}
+	}
+
+	&__content {
+		flex: 1 1 auto;
+		background-color: $White;
+		border-radius: 5px;
+		padding: 56px 28px 56px 56px;
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 1200px) {
+			padding: 30px;
+		}
+		@media screen and (max-width: 991px) {
+			padding-left: 20px;
+		}
+		@media screen and (max-width: 767px) {
+			padding: 20px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 19px;
+
+		@media screen and (max-width: 991px) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__text {
+		margin-bottom: 32px;
+
+		@media screen and (max-width: 991px) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__problems {
+		display: flex;
+		margin: 0 -15px;
+
+		@media screen and (max-width: 450px) {
+			display: block;
+		}
+	}
+
+	&__mistakes {
+		padding: 0 15px;
+
+		.case-problems__title {
+			color: $Red;
+		}
+
+		@media screen and (max-width: 450px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__solution {
+		padding: 0 15px;
+
+		.case-problems__title {
+			color: $Green;
+		}
+	}
+}

@@ -1,0 +1,34 @@
+.case-problems {
+	&__title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 20px;
+
+		@media screen and (max-width: $layoutDesktop + 'px') {
+			font-size: calc(14px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(22 / 18);
+		}
+		@media screen and (max-width: 991px) {
+			margin-bottom: 8px;
+		}
+	}
+
+	&__item {
+		line-height: 16px;
+		margin-bottom: 6px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			background-color: $Blue;
+			border-radius: 50%;
+			margin-right: 8px;
+		}
+	}
+}

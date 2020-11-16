@@ -1,0 +1,129 @@
+.cases {
+	padding: 41px 0 77px;
+	background-color: $GrayLight;
+
+	@media screen and (max-width: 991px) {
+		padding: 40px 0;
+	}
+	@media screen and (max-width: 767px) {
+		padding: 30px 0;
+	}
+
+	&__title-h4 {
+		margin-bottom: 33px;
+
+		@media screen and (max-width: 767px) {
+			margin-bottom: 20px;
+		}
+
+		&::before {
+			background-color: $Black;
+		}
+	}
+
+	&__slider {
+		@media screen and (max-width: 1300px) {
+			max-width: 1230px;
+			margin: 0 auto;
+			padding: 0 30px;
+		}
+		@media screen and (max-width: 991px) {
+			padding: 0 20px;
+		}
+
+		.slick-list {
+			@media screen and (min-width: 1301px) {
+				&::before,
+				&::after {
+					content: "";
+					display: block;
+					height: 100%;
+					width: calc((100vw - 1212px - 49px * 2) / 2);
+					position: absolute;
+					top: 50%;
+					transform: translate(0, -50%);
+					background: linear-gradient(270deg, #f4f4f4 0%, rgba(244, 244, 244, 0.9) 100%);
+				}
+
+				&::before {
+					z-index: 1;
+					left: 0;
+					border-radius: 0 5px 5px 0px;
+				}
+				&::after {
+					right: 0;
+					border-radius: 5px 0 0px 5px;
+				}
+			}
+		}
+
+		.slick-arrow {
+			transform: translate(-50%, -50%);
+		}
+
+		.slick-prev {
+			left: 30px;
+
+			@media screen and (min-width: 1301px) {
+				left: calc((100vw - 1212px) / 2);
+				transform: translate(0%, -50%);
+			}
+			@media screen and (max-width: 575px) {
+				left: 20px;
+			}
+		}
+
+		.slick-next {
+			right: -10px;
+
+			@media screen and (min-width: 1301px) {
+				right: calc((100vw - 1212px) / 2);
+				transform: translate(0%, -50%);
+			}
+			@media screen and (max-width: 575px) {
+				right: -6px;
+			}
+		}
+
+		.slick-dots {
+			position: absolute;
+			top: -36px;
+			right: 30px;
+
+			@media screen and (min-width: 1301px) {
+				right: calc((100vw - 1212px) / 2 + 20px);
+				transform: translate(0, -50%);
+			}
+			@media screen and (max-width: 767px) {
+				top: -28px;
+			}
+
+			li {
+				margin-right: 5px;
+				&:last-child {
+					margin-right: 0;
+				}
+				button {
+					width: 8px;
+					height: 4px;
+					background-color: $Gray3;
+				}
+
+				&.slick-active {
+					button {
+						width: 19px;
+						background-color: $Blue;
+					}
+				}
+			}
+		}
+	}
+
+	&__item {
+		@media screen and (min-width: 1301px) {
+			max-width: 1212px;
+			margin-right: 49px;
+			padding: 0 20px;
+		}
+	}
+}
