@@ -2455,7 +2455,7 @@ textarea.form__input {
     width: 300%;
     height: 100%;
     position: absolute;
-    left: -1px;
+    left: 2px;
     top: 50%;
     -webkit-transform: translate(-100%, -50%);
         -ms-transform: translate(-100%, -50%);
@@ -2498,7 +2498,7 @@ textarea.form__input {
     width: 300%;
     height: 100%;
     position: absolute;
-    left: 1px;
+    left: 2px;
     top: 50%;
     -webkit-transform: translate(-100%, -50%);
         -ms-transform: translate(-100%, -50%);
@@ -3418,7 +3418,6 @@ textarea.form__input {
   .header__item {
     width: 100%;
     border-bottom: 1px solid #636363;
-    padding: 0;
   }
 
   .header__item:first-child {
@@ -3427,10 +3426,15 @@ textarea.form__input {
 
   .header__item.menu-item-has-children .sub-menu {
     display: none;
+    margin-top: 15px;
   }
 
   .header__item.menu-item-has-children .sub-menu .menu-item {
     margin-bottom: 15px;
+  }
+
+  .header__item.menu-item-has-children .sub-menu .menu-item:last-child {
+    margin-bottom: 0;
   }
 
   .header__item.menu-item-has-children .sub-menu .menu-item a {
@@ -3454,8 +3458,8 @@ textarea.form__input {
   }
 
   .header__item > a {
-    padding: 15px 0;
-    display: block;
+    display: inline-block;
+    padding-right: 20px;
   }
 
   .header__link {
