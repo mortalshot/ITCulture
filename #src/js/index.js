@@ -10,6 +10,8 @@ $(document).ready(function () {
     @@include('components/menu.js')
     @@include('components/calculator.js')
     @@include('components/slider.js')
+    @@include('components/tabs.js')
+    @@include('components/accordion.js')
 });
 
 @@include('components/header-fixed.js')

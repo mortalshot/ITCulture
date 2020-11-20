@@ -8,5 +8,7 @@ $('.accordion__title').click(function (event) {
     }
     $(this).toggleClass('active').next().slideToggle(300);
 
-    $('.accordion .accordion__title:first').click();
 });
+
+$('.accordion .accordion__title:first').click();
+console.log('click');

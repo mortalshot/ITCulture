@@ -3958,6 +3958,36 @@ $(document).ready(function () {
       // },
       ]
     });
+    $('.tabs-triggers__item').click(function (e) {
+      e.preventDefault();
+      var tabsid = $(this).closest('.tabs').attr("id");
+      $('#' + tabsid + ' ' + '.tabs-triggers__item').removeClass('tabs-triggers__item--active');
+      $('#' + tabsid + ' ' + '.tabs-content__item').removeClass('tabs-content__item--active');
+      $(this).addClass('tabs-triggers__item--active');
+      $($(this).attr('href')).addClass('tabs-content__item--active');
+    });
+    var tabsList = document.querySelectorAll('.tabs');
+
+    if (tabsList.length > 0) {
+      for (var i = 0; i < tabsList.length; i++) {
+        var element = tabsList[i];
+        var elementID = $(element).attr('id');
+        $("#" + elementID + " .tabs-triggers__item:first").click();
+      }
+    }
+
+    $('.accordion__title').click(function (event) {
+      var accordionid = $(this).closest('.accordion').attr("id");
+
+      if ($('#' + accordionid).hasClass('accordion-one')) {
+        $('#' + accordionid + ' ' + '.accordion__title').not($(this)).removeClass('active');
+        $('#' + accordionid + ' ' + '.accordion__text').not($(this).next()).slideUp(300);
+      }
+
+      $(this).toggleClass('active').next().slideToggle(300);
+    });
+    $('.accordion .accordion__title:first').click();
+    console.log('click');
   });
   mediaQueryHeader = window.matchMedia('(min-width: 881px)');
   mediaQueryHeader.addListener(handleTabletChange);

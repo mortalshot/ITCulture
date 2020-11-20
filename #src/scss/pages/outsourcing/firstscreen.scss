@@ -39,7 +39,13 @@
 	&__text {
 		margin-bottom: 36px;
 		max-width: 447px;
+		font-size: 15px;
+		line-height: 21px;
 
+		@media screen and (max-width: $layoutDesktop + "px") {
+			font-size: calc(12px + 3 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(21 / 15);
+		}
 		@media screen and (max-width: 767px) {
 			max-width: 100%;
 			margin-bottom: 20px;
@@ -68,6 +74,111 @@
 		@media screen and (max-width: 767px) {
 			transform: translate(0, 0);
 			margin-bottom: 30px;
+		}
+	}
+
+	&--tabs {
+		.row {
+			align-items: flex-start;
+		}
+
+		.firstscreen__body {
+			padding: 38px 20px 38px 0;
+		}
+
+		.firstscreen__title {
+			max-width: 100%;
+		}
+
+		.firstscreen__text {
+			@media screen and (max-width: 450px) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__tabs {
+		max-width: 498px;
+		padding-bottom: 20px;
+
+		.tabs-triggers {
+			margin-bottom: 40px;
+
+			@media screen and (max-width: 450px) {
+				display: none;
+			}
+
+			&__item {
+				font-weight: 900;
+				font-size: 15px;
+				line-height: 21px;
+				color: $Black;
+				text-transform: uppercase;
+				text-align: center;
+				padding: 9px 15px;
+				flex: 0 0 33.333%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: 1px solid $Gray;
+				background-color: $White;
+				transition: 0.3s ease all 0s;
+
+				@media screen and (max-width: $layoutDesktop + "px") {
+					font-size: calc(12px + 3 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+					line-height: calc(21 / 15);
+				}
+				@media screen and (max-width: 991px) {
+					flex: 1 1 auto;
+				}
+
+				&--active {
+					border-color: $Cyan;
+					background-color: $Cyan;
+					color: $White;
+				}
+			}
+		}
+
+		.tabs-content {
+			&__item {
+				@media screen and (max-width: 450px) {
+					display: block;
+				}
+			}
+		}
+
+		.accordion {
+			&__title {
+				font-weight: 900;
+				font-size: 15px;
+				line-height: 21px;
+				color: $Black;
+				text-transform: uppercase;
+				flex: 0 0 100%;
+				display: flex;
+				align-items: center;
+				padding: 10px 30px 10px 0;
+
+				&::before,
+				&::after {
+					background-color: $Black;
+				}
+
+				@media screen and (min-width: 451px) {
+					display: none;
+				}
+				@media screen and (max-width: $layoutDesktop + "px") {
+					font-size: calc(12px + 3 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+					line-height: calc(21 / 15);
+				}
+			}
+
+			&__text {
+				@media screen and (min-width: 451px) {
+					display: block !important;
+				}
+			}
 		}
 	}
 }

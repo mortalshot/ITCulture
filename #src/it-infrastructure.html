@@ -1,0 +1,88 @@
+@@include('html-components/_header.html', {
+"title": "Page name"
+})
+
+<main class="site__main">
+	<section class="firstscreen firstscreen--tabs">
+		<div class="firstscreen__row row">
+			<div class="firstscreen__content">
+				<div class="firstscreen__container container">
+					<div class="firstscreen__body">
+						<h1 class="firstscreen__title title-h1">Обустройство офисной it инфраструктуры</h1>
+						<div id="infrustructureTabs" class="firstscreen__tabs tabs">
+							<div class="tabs__triggers tabs-triggers">
+								<a href="#infrustructureTab-1" class="tabs-triggers__item">CКС</a>
+								<a href="#infrustructureTab-2" class="tabs-triggers__item">СКУД</a>
+								<a href="#infrustructureTab-3" class="tabs-triggers__item">видеонаблюдение</a>
+							</div>
+							<div id="infrustructureAccordion"
+								class="tabs__content tabs-content accordion accordion-one">
+								<div id="infrustructureTab-1" class="tabs-content__item accordion__item">
+									<div class="accordion__title">CКС</div>
+									<div class="firstscreen__text accordion__text">
+										<p>Слаботочные системы – это бесценные и полезные помощники в нашей повседневной
+											жизни. Сбои и неполадки в их работе доставляют порой огромные неудобства.
+										</p>
+										<p>Для предотвращения подобных досадных проблем очень важно, чтобы
+											проектирование, монтаж скс и обслуживание таких систем осуществлялось только
+											специалистами соответствующей квалификации.</p>
+									</div>
+								</div>
+								<div id="infrustructureTab-2" class="tabs-content__item accordion__item">
+									<div class="accordion__title">СКУД</div>
+									<div class="firstscreen__text accordion__text">
+										<p>Слаботочные системы – это бесценные и полезные помощники в нашей повседневной
+											жизни. Сбои и неполадки в их работе доставляют порой огромные неудобства.
+										</p>
+									</div>
+								</div>
+								<div id="infrustructureTab-3" class="tabs-content__item accordion__item">
+									<div class="accordion__title">видеонаблюдение</div>
+									<div class="firstscreen__text accordion__text">
+										<p>Слаботочные системы – это бесценные и полезные помощники в нашей повседневной
+											жизни. Сбои и неполадки в их работе доставляют порой огромные неудобства.
+										</p>
+										<p>Для предотвращения подобных досадных проблем очень важно, чтобы
+											проектирование, монтаж скс и обслуживание таких систем осуществлялось только
+											специалистами соответствующей квалификации.</p>
+										<p>Для предотвращения подобных досадных проблем очень важно, чтобы
+											проектирование, монтаж скс и обслуживание таких систем осуществлялось только
+											специалистами соответствующей квалификации.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="firstscreen__button"><a href="" class="btn btn-orange">Оставить заявку</a></div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="firstscreen__gallery gallery">
+				<div class="gallery__row">
+					<div class="gallery__vert">
+						<div class="gallery__img"><img src="img/gallery/low-current/low-current-1.jpg" alt=""></div>
+					</div>
+					<div class="gallery__wrapper">
+						<div class="gallery__img"><img src="img/gallery/low-current/low-current-2.jpg" alt=""></div>
+						<div class="gallery__img"><img src="img/gallery/low-current/low-current-3.jpg" alt=""></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	@@include('html-components/calculator.html')
+	
+	@@include('html-components/request.html')
+
+	@@include('html-components/company.html', {
+	"class": ""
+	})
+
+	@@include('html-components/cases.html')
+
+	@@include('html-components/offer.html')
+</main>
+
+@@include('html-components/_footer.html')
