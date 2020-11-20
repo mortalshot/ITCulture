@@ -1,0 +1,68 @@
+@@include('html-components/_header.html', {
+"title": "Абонентское обслуживание"
+})
+
+<main class="site__main">
+	<section class="firstscreen">
+		<div class="firstscreen__row row">
+			<div class="firstscreen__content">
+				<div class="firstscreen__container container">
+					<div class="firstscreen__body">
+						<h1 class="firstscreen__title title-h1">Абонентское обслуживание</h1>
+						<div class="firstscreen__text">
+							<p>Надежная и устойчивая работа компьютеров и компьютерных сетей - неотъемлемая составляющая современного бизнеса. Обслуживание ПК и компьютерных сетей – необходимое условие ее достижения. </p>
+							<p>Неполадки и внезапно возникающие проблемы в работе компьютеров, периферийных устройств или сети в целом, простои в работе служб и приложений, таких как базы данных, 1с предприятие, системы CRM и прочее - все это влечет за собой убытки.</p>
+						</div>
+						<div class="firstscreen__button"><a href="" class="btn btn-orange">Оставить заявку</a></div>
+					</div>
+				</div>
+			</div> 
+
+			
+			<div class="firstscreen__gallery gallery">
+				<div class="gallery__row">
+					<div class="gallery__vert">
+						<div class="gallery__img"><img src="img/gallery/service/service-1.jpg" alt=""></div>
+					</div>
+					<div class="gallery__wrapper">
+						<div class="gallery__img"><img src="img/gallery/service/service-2.jpg" alt=""></div>
+						<div class="gallery__img"><img src="img/gallery/service/service-3.jpg" alt=""></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	@@include('html-components/calculator.html')
+
+	<section class="more-about">
+		<div class="more-about__container container">
+			<div class="more-about__cards">
+				<div class="more-about__card">
+					<div class="more-about__card-wrapper">
+						<h2 class="more-about__title title-h2">Разовый выезд системного администратора</h2>
+						<a href="/service-onetime.html" class="more-about__button btn btn-orange">Подробнее</a>
+					</div>
+				</div>
+				<div class="more-about__card">
+					<div class="more-about__card-wrapper">
+						<h2 class="more-about__title title-h2">Системный администратор на полный день</h2>
+						<a href="/service-allday.html" class="more-about__button btn btn-orange">Подробнее</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	@@include('html-components/request.html')
+	
+	@@include('html-components/company.html', {
+		"class": ""
+	})
+	
+	@@include('html-components/cases.html')
+	
+	@@include('html-components/offer.html')
+</main>
+
+@@include('html-components/_footer.html')

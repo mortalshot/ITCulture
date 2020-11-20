@@ -1,0 +1,49 @@
+@@include('html-components/_header.html', {
+"title": "Системный администратор на полный день"
+})
+
+<main class="site__main">
+	<section class="firstscreen">
+		<div class="firstscreen__row row">
+			<div class="firstscreen__content">
+				<div class="firstscreen__container container">
+					<div class="firstscreen__body">
+						<h1 class="firstscreen__title title-h1">Системный администратор на полный день</h1>
+						<div class="firstscreen__text">
+							<p>При большом количестве компьютеров, более 25, имеет смысл воспользоваться нашим специальным предложением – системный администратор на полный рабочий день.</p>
+							<p>Мы закрепляем за Вами нашего сотрудника, который полный рабочий день будет находиться в Вашем офисе и решать только Ваши проблемы. По Вашей просьбе мы можем сократить график пребывания сотрудника у Вас, что снизит цену.</p>
+						</div>
+
+						<div class="firstscreen__button"><a href="" class="btn btn-orange">Оставить заявку</a></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="firstscreen__gallery gallery">
+				<div class="gallery__row">
+					<div class="gallery__vert">
+						<div class="gallery__img"><img src="img/gallery/service/service-1.jpg" alt=""></div>
+					</div>
+					<div class="gallery__wrapper">
+						<div class="gallery__img"><img src="img/gallery/service/service-2.jpg" alt=""></div>
+						<div class="gallery__img"><img src="img/gallery/service/service-3.jpg" alt=""></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	@@include('html-components/calculator.html')
+	
+	@@include('html-components/request.html')
+
+	@@include('html-components/company.html', {
+	"class": ""
+	})
+
+	@@include('html-components/cases.html')
+
+	@@include('html-components/offer.html')
+</main>
+
+@@include('html-components/_footer.html')

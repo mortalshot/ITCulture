@@ -1,0 +1,49 @@
+@@include('html-components/_header.html', {
+"title": "Организация и обслуживание систем IP-Телефонии"
+})
+
+<main class="site__main">
+	<section class="firstscreen">
+		<div class="firstscreen__row row">
+			<div class="firstscreen__content">
+				<div class="firstscreen__container container">
+					<div class="firstscreen__body">
+						<h1 class="firstscreen__title title-h1">Организация и обслуживание систем IP-Телефонии</h1>
+						<div class="firstscreen__text">
+							<p>IP-телефония позволяет пользователям передавать голос, данные и видео по единой конвергентной сети с использованием открытого, основанного на стандартах протокола IP.
+							<p>Она расширяет коммуникационные услуги, делает возможным охватить ими всех сотрудников, независимо от того, работают ли они в головном офисе, в территориально-распределенных подразделениях или в удаленном режиме.</p>
+						</div>
+
+						<div class="firstscreen__button"><a href="" class="btn btn-orange">Оставить заявку</a></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="firstscreen__gallery gallery">
+				<div class="gallery__row">
+					<div class="gallery__vert">
+						<div class="gallery__img"><img src="img/gallery/ip-telephony/ip-telephony-1.jpg" alt=""></div>
+					</div>
+					<div class="gallery__wrapper">
+						<div class="gallery__img"><img src="img/gallery/ip-telephony/ip-telephony-2.jpg" alt=""></div>
+						<div class="gallery__img"><img src="img/gallery/ip-telephony/ip-telephony-3.jpg" alt=""></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	@@include('html-components/calculator.html')
+	
+	@@include('html-components/request.html')
+
+	@@include('html-components/company.html', {
+	"class": ""
+	})
+
+	@@include('html-components/cases.html')
+
+	@@include('html-components/offer.html')
+</main>
+
+@@include('html-components/_footer.html')
