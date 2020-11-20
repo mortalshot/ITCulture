@@ -1928,22 +1928,18 @@ textarea.form__input {
 }
 
 .about {
-  padding: 27px 0 0;
+  padding: 27px 0 47px;
   overflow: hidden;
 }
 
-.about__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.about__row {
+  margin-bottom: 20px;
 }
 
 .about__content {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 57.2%;
           flex: 0 0 57.2%;
-  font-size: 16px;
-  line-height: 22px;
 }
 
 .about__title-h4 {
@@ -1959,11 +1955,15 @@ textarea.form__input {
 }
 
 .about__text {
+  font-size: 16px;
+  line-height: 22px;
   margin-bottom: 40px;
 }
 
 .about__list-title {
   font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
   margin-bottom: 37px;
 }
 
@@ -1971,6 +1971,8 @@ textarea.form__input {
   position: relative;
   padding-left: 27px;
   margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .about__list-item::before {
@@ -1993,6 +1995,7 @@ textarea.form__input {
       -ms-transform: translate(0px, -175px);
           transform: translate(0px, -175px);
   position: relative;
+  margin-bottom: -160px;
 }
 
 .about__map .map-text {
@@ -2525,6 +2528,83 @@ textarea.form__input {
   height: 55px;
 }
 
+.map {
+  position: relative;
+}
+
+.map__image {
+  position: relative;
+  height: 482px;
+}
+
+.map__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.billet {
+  position: absolute;
+  top: 50%;
+  left: 21.7%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  max-width: 471px;
+}
+
+.billet__body {
+  padding: 31px 35px 10px;
+  background: #fff;
+  -webkit-box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.billet__title {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 22px;
+}
+
+.billet__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.billet__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  padding: 0px 0 21px 0px;
+}
+
+.billet__label {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 6px;
+}
+
+.billet__link {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+}
+
+.billet__btn {
+  height: 39px;
+}
+
 .calculator {
   padding: 39px 0 94px;
   background-color: #f5f5f5;
@@ -2864,6 +2944,10 @@ textarea.form__input {
     letter-spacing: 3px;
     color: #000;
   }
+
+  .map {
+    margin-bottom: 24px;
+  }
 }
 
 @media screen and (min-width: 993px) {
@@ -3012,7 +3096,17 @@ textarea.form__input {
     line-height: calc(22 / 18);
   }
 
-  .about__content {
+  .about__text {
+    font-size: calc(12px + 4 * ((100vw - 320px) / (1920 - 320)));
+    line-height: calc(22 / 16);
+  }
+
+  .about__list-title {
+    font-size: calc(12px + 4 * ((100vw - 320px) / (1920 - 320)));
+    line-height: calc(22 / 16);
+  }
+
+  .about__list-item {
     font-size: calc(12px + 4 * ((100vw - 320px) / (1920 - 320)));
     line-height: calc(22 / 16);
   }
@@ -3050,6 +3144,21 @@ textarea.form__input {
   .offer__title {
     font-size: calc(20px + 28 * ((100vw - 320px) / (1920 - 320)));
     line-height: calc(58 / 48);
+  }
+
+  .billet__title {
+    font-size: calc(14px + 4 * ((100vw - 320px) / (1920 - 320)));
+    line-height: calc(22 / 18);
+  }
+
+  .billet__label {
+    font-size: calc(12px + 2 * ((100vw - 320px) / (1920 - 320)));
+    line-height: calc(16 / 14);
+  }
+
+  .billet__link {
+    font-size: calc(12px + 2 * ((100vw - 320px) / (1920 - 320)));
+    line-height: calc(17 / 14);
   }
 
   .calculator-sum__result {
@@ -3416,6 +3525,7 @@ textarea.form__input {
     -webkit-transform: translate(0px, -100px);
         -ms-transform: translate(0px, -100px);
             transform: translate(0px, -100px);
+    margin-bottom: -90px;
   }
 
   .about__map .map-text {
@@ -3497,6 +3607,21 @@ textarea.form__input {
 
   .more-about__card-wrapper {
     padding-left: 60px;
+  }
+
+  .billet {
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+
+  .billet__body {
+    padding: 30px 20px 15px;
+  }
+
+  .billet__item {
+    padding-bottom: 15px;
   }
 
   .calculator {
@@ -3932,6 +4057,7 @@ textarea.form__input {
     -webkit-transform: translate(0px, -50px);
         -ms-transform: translate(0px, -50px);
             transform: translate(0px, -50px);
+    margin-bottom: -40px;
   }
 
   .about__map .map-text {
@@ -4038,6 +4164,16 @@ textarea.form__input {
 
   .more-about__title {
     margin-bottom: 20px;
+  }
+
+  .billet__title {
+    margin-bottom: 15px;
+  }
+
+  .billet__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
   }
 
   .calculator__title-h4 {
@@ -4158,7 +4294,7 @@ textarea.form__input {
     padding: 30px 0;
   }
 
-  .about__body {
+  .about__row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -4177,7 +4313,7 @@ textarea.form__input {
     -webkit-transform: translate(0px, -20px);
         -ms-transform: translate(0px, -20px);
             transform: translate(0px, -20px);
-    margin: 0 -30px;
+    margin: 0 -30px -10px;
   }
 
   .about__map .map-text {
@@ -4509,6 +4645,7 @@ textarea.form__input {
     -webkit-transform: translate(0, 0);
         -ms-transform: translate(0, 0);
             transform: translate(0, 0);
+    margin-bottom: 0;
   }
 
   .about__map img {
@@ -4587,6 +4724,15 @@ textarea.form__input {
     height: 50px;
   }
 
+  .map__image {
+    height: auto;
+    padding-bottom: 100%;
+  }
+
+  .billet__body {
+    padding: 20px 15px 5px;
+  }
+
   .calculator-sum__btn {
     max-width: 100%;
     height: 50px;
@@ -4609,5 +4755,11 @@ textarea.form__input {
 @media screen and (min-width: 768px) and (max-width: 800px) {
   .footer__button a {
     letter-spacing: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .billet__btn {
+    letter-spacing: 1px;
   }
 }
