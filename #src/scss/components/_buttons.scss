@@ -11,18 +11,38 @@
     border-radius: 5px;
     padding: 10px;
     white-space: nowrap;
+    transition: 0.3s ease all 0s;
 
     &-orange {
         background-color: $Orange2;
         color: $White;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                box-shadow: 0px 4px 30px rgba(246, 131, 81, 0.25), 0px 6px 10px rgba(246, 131, 81, 0.3);
+            }
+
+            &:active {
+                background-color: $Orange-hover;
+            }
+        }
     }
 
     &-white {
         background-color: $White;
         color: $Black;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: $Green2;
+            }
+
+            &:active {
+                background-color: $GrayLight;
+            }
+        }
     }
 }
-
 
 .slick-arrow {
     font-size: 0;
@@ -36,7 +56,18 @@
     position: absolute;
     top: 50%;
     z-index: 1;
+    transition: 0.3s ease all 0s;
 
+    @media screen and (min-width: 992px) {
+        &:hover {
+            background: $Orange-hover;
+            box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        &:active {
+            background: $Orange-hover;
+        }
+    }
     @media screen and (max-width: 575px) {
         width: 28px;
         height: 28px;
@@ -53,7 +84,6 @@
 .slick-next {
     right: 0;
 }
-
 
 .slick-dots {
     display: flex;

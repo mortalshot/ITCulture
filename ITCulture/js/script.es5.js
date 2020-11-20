@@ -3844,60 +3844,67 @@ $(document).ready(function () {
     });
     var computerSlider = document.getElementById('numSlider1');
     var computerInput = document.getElementById('inputNumSlider1');
-    var computerPrice = 1000;
-    var serverPrice = 2000;
-    var calculatorResLabel = document.querySelector('.calculator-sum__result span');
-    noUiSlider.create(computerSlider, {
-      start: [5, 5],
-      connect: true,
-      step: 1,
-      range: {
-        'min': 5,
-        'max': 70
-      },
-      format: wNumb({
-        decimals: 0
-      }),
-      pips: {
-        mode: 'steps'
-      }
-    });
-    var serverSlider = document.getElementById('numSlider2');
-    var serverInput = document.getElementById('inputNumSlider2');
-    noUiSlider.create(serverSlider, {
-      start: [1, 1],
-      connect: true,
-      step: 1,
-      range: {
-        'min': 1,
-        'max': 70
-      },
-      format: wNumb({
-        decimals: 0
-      }),
-      pips: {
-        mode: 'steps'
-      }
-    });
-    computerSlider.noUiSlider.on('update', function (values, handle) {
-      computerInput.value = values[handle];
-      priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
-    });
-    computerInput.addEventListener('change', function () {
-      computerSlider.noUiSlider.set([5, computerInput.value]);
-      priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
-    });
-    serverSlider.noUiSlider.on('update', function (values, handle) {
-      serverInput.value = values[handle];
-      priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
-    });
-    serverInput.addEventListener('change', function () {
-      serverSlider.noUiSlider.set([1, serverInput.value]);
-      priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
-    });
 
-    function priceCalculate(computerPrice, serverPrice, serverNum, computerNum) {
-      calculatorResLabel.innerHTML = serverPrice * serverNum + computerPrice * computerNum;
+    if (computerSlider) {
+      var priceCalculate = function priceCalculate(computerPrice, serverPrice, serverNum, computerNum) {
+        if (computerInput.value == 51 || serverInput.value == 6) {
+          calculatorResLabel.innerHTML = 'Индивидуальный расчет';
+        } else {
+          calculatorResLabel.innerHTML = serverPrice * serverNum + computerPrice * computerNum;
+        }
+      };
+
+      var computerPrice = 1000;
+      var serverPrice = 2000;
+      var calculatorResLabel = document.querySelector('.calculator-sum__result span');
+      noUiSlider.create(computerSlider, {
+        start: [5, 5],
+        connect: true,
+        step: 1,
+        range: {
+          'min': 5,
+          'max': 51
+        },
+        format: wNumb({
+          decimals: 0
+        }),
+        pips: {
+          mode: 'steps'
+        }
+      });
+      var serverSlider = document.getElementById('numSlider2');
+      var serverInput = document.getElementById('inputNumSlider2');
+      noUiSlider.create(serverSlider, {
+        start: [1, 1],
+        connect: true,
+        step: 1,
+        range: {
+          'min': 1,
+          'max': 6
+        },
+        format: wNumb({
+          decimals: 0
+        }),
+        pips: {
+          mode: 'steps'
+        }
+      });
+      computerSlider.noUiSlider.on('update', function (values, handle) {
+        computerInput.value = values[handle];
+        priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
+      });
+      computerInput.addEventListener('change', function () {
+        computerSlider.noUiSlider.set([5, computerInput.value]);
+        priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
+      });
+      serverSlider.noUiSlider.on('update', function (values, handle) {
+        serverInput.value = values[handle];
+        priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
+      });
+      serverInput.addEventListener('change', function () {
+        serverSlider.noUiSlider.set([1, serverInput.value]);
+        priceCalculate(computerPrice, serverPrice, serverInput.value, computerInput.value);
+      });
     }
 
     $('.reviews__slider').slick({
@@ -3987,7 +3994,141 @@ $(document).ready(function () {
       $(this).toggleClass('active').next().slideToggle(300);
     });
     $('.accordion .accordion__title:first').click();
-    console.log('click');
+    var popupLinks = document.querySelectorAll('.popup-link');
+    var body = document.querySelector('body');
+    var lockPadding = document.querySelectorAll(".lock-padding");
+    var unlock = true;
+    var timeout = 800;
+
+    if (popupLinks.length > 0) {
+      var _loop = function _loop(index) {
+        var popupLink = popupLinks[index];
+        popupLink.addEventListener("click", function (e) {
+          var popupName = popupLink.getAttribute('href').replace('#', '');
+          var currentPopup = document.getElementById(popupName);
+          popupOpen(currentPopup);
+          e.preventDefault();
+        });
+      };
+
+      for (var index = 0; index < popupLinks.length; index++) {
+        _loop(index);
+      }
+    }
+
+    var popupCloseIcon = document.querySelectorAll('.close-popup');
+
+    if (popupCloseIcon.length > 0) {
+      var _loop2 = function _loop2(_index3) {
+        var el = popupCloseIcon[_index3];
+        el.addEventListener('click', function (e) {
+          popupClose(el.closest('.popup'));
+          e.preventDefault();
+        });
+      };
+
+      for (var _index3 = 0; _index3 < popupCloseIcon.length; _index3++) {
+        _loop2(_index3);
+      }
+    }
+
+    function popupOpen(currentPopup) {
+      if (currentPopup && unlock) {
+        var popupActive = document.querySelector('.popup.open');
+
+        if (popupActive) {
+          popupClose(popupActive, false);
+        } else {
+          bodyLock();
+        }
+
+        currentPopup.classList.add('open');
+        currentPopup.addEventListener('click', function (e) {
+          if (!e.target.closest('.popup__content')) {
+            popupClose(e.target.closest('.popup'));
+          }
+        });
+      }
+    }
+
+    function popupClose(popupActive) {
+      var doUnlock = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+      if (unlock) {
+        popupActive.classList.remove('open');
+
+        if (doUnlock) {
+          bodyUnLock();
+        }
+      }
+    }
+
+    function bodyLock() {
+      var lockPaddingValue = window.innerWidth - document.querySelector('.site__main').offsetWidth + 'px'; //!обратить внимание на контейнер
+
+      if (lockPadding.length > 0) {
+        for (var _index4 = 0; _index4 < lockPadding.length; _index4++) {
+          var el = lockPadding[_index4];
+          el.style.paddingRight = lockPaddingValue;
+        }
+      }
+
+      body.style.paddingRight = lockPaddingValue;
+      body.classList.add('lock');
+      unlock = false;
+      setTimeout(function () {
+        unlock = true;
+      }, timeout);
+    }
+
+    function bodyUnLock() {
+      setTimeout(function () {
+        if (lockPadding.length > 0) {
+          for (var _index5 = 0; _index5 < lockPadding.length; _index5++) {
+            var el = lockPadding[_index5];
+            el.style.paddingRight = '0px';
+          }
+        }
+
+        body.style.paddingRight = '0px';
+        body.classList.remove('lock');
+      }, timeout);
+      unlock = false;
+      setTimeout(function () {
+        unlock = true;
+      }, timeout);
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.which === 27) {
+        var popupActive = document.querySelector('.popup.open');
+        popupClose(popupActive);
+      }
+    });
+
+    (function () {
+      // проверяем поддержку
+      if (!Element.prototype.closest) {
+        // реализуем
+        Element.prototype.closest = function (css) {
+          var node = this;
+
+          while (node) {
+            if (node.matches(css)) return node;else node = node.parentElement;
+          }
+
+          return null;
+        };
+      }
+    })();
+
+    (function () {
+      // проверяем поддержку
+      if (!Element.prototype.matches) {
+        // определяем свойство
+        Element.prototype.matches = Element.prototype.matchesSelector || Element.prototype.webkitMatchesSelector || Element.prototype.mozMatchesSelector || Element.prototype.msMatchesSelector;
+      }
+    })();
   });
   mediaQueryHeader = window.matchMedia('(min-width: 881px)');
   mediaQueryHeader.addListener(handleTabletChange);
@@ -4014,8 +4155,10 @@ $(document).ready(function () {
 
       if (scrolled > navOffset) {
         $('.site__wrap').addClass('nav-fixed');
+        $('.header__bottom').addClass('lock-padding');
       } else if (scrolled < navOffset) {
         $('.site__wrap').removeClass('nav-fixed');
+        $('.header__bottom').removeClass('lock-padding');
       }
     });
   } // mediaQueryMdMin = window.matchMedia('(min-width: 768px)');

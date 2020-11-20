@@ -23,8 +23,10 @@ if (mediaQueryHeader.matches) {
 
         if (scrolled > navOffset) {
             $('.site__wrap').addClass('nav-fixed');
+            $('.header__bottom').addClass('lock-padding');
         } else if (scrolled < navOffset) {
             $('.site__wrap').removeClass('nav-fixed');
+            $('.header__bottom').removeClass('lock-padding');
         }
     });
 }

@@ -11,4 +11,3 @@ $('.accordion__title').click(function (event) {
 });
 
 $('.accordion .accordion__title:first').click();
-console.log('click');

@@ -7,10 +7,6 @@
 		padding: 40px 0;
 	}
 
-	a {
-		color: $White;
-	}
-
 	&__row {
 		margin: 0 -15px;
 		justify-content: space-between;
@@ -96,6 +92,7 @@
 		line-height: 20px;
 		white-space: nowrap;
 		display: inline-block;
+		color: $White;
 
 		@media screen and (max-width: $layoutDesktop + "px") {
 			font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
@@ -134,7 +131,18 @@
 					margin-bottom: 9px;
 					display: block;
 					max-width: 220px;
+					color: $GrayDark2;
+					transition: 0.3s ease all 0s;
 
+					@media screen and (min-width: 992px) {
+						&:hover {
+							color: $White;
+
+							&::before {
+								border-color: $White;
+							}
+						}
+					}
 					@media screen and (max-width: 767px) {
 						max-width: 330px;
 						margin-bottom: 15px;
@@ -149,9 +157,21 @@
 						position: absolute;
 						left: 0;
 						top: 2px;
-						border: 2px solid $White;
+						border: 2px solid $GrayDark2;
+						transition: 0.3s ease all 0s;
 					}
 				}
+			}
+		}
+	}
+
+	&__link {
+		color: $GrayDark2;
+		transition: 0.3s ease all 0s;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				color: $White;
 			}
 		}
 	}
@@ -176,6 +196,15 @@
 	}
 
 	.calculator-link {
-		text-decoration: underline;
+		span {
+			transition: 0.3s ease all 0s;
+			color: $GrayDark2;
+		}
+
+		&:hover {
+			span {
+				color: $White;
+			}
+		}
 	}
 }
